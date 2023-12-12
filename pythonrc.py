@@ -16,3 +16,5 @@ def rand_str(str_len: int) -> str:
 
 
 print(f"Loaded: {os.environ['PYTHONSTARTUP']}")
+# print runtime symbols
+print(json.dumps([func for func in dir() if callable(globals()[func]) and not func.startswith("__")], indent=2))
